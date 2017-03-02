@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.parseXML demo</title>
+  <style>
+     div {
+        padding: 20px;
+        margin: auto;
+        margin-bottom: 10px;
+        width: 80%;
+    }
+    .textColor {
+        color: #FE886E;
+        background-color: #D6EAF8;
+    }
+    .borderColor {
+        border-width: 3px;
+        border-style: solid;
+        border-color: #9E66F5;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+  <h1>Find a Bus at Addison and Western</h1>
+  <div class="textColor borderColor">
+  
+  <button type="button" id="btnFind" >Find a Bus!</button>
+
+</div>
+    
+    <!-- a div to store the results -->
+    <div id="49" class="textColor borderColor">
+        
+        
+        
+    </div>
+    
+        <div id="X49" class="textColor borderColor">
+        
+        
+        
+    </div>
+    
+        <div id="152" class="textColor borderColor">
+        
+        
+        
+    </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+        $(function() {
+          
+          
+          var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
+          
+          var apiEndpoint = "http://www.ctabustracker.com/bustime/api/v2/getpredictions";
+          
+          //what you want the url to be
+          //http://ctabustracker.com/bustime/api/v2/getpredictions?key=PNMHWd68wyyadCQGiHVS3nEjh&rt=49&stpid=8417&format=json
+          
+          console.log(apiEndpoint);
+          
+          $("#btnFind").on("click", function() {
+                
+          $.ajax({
+              url: apiPassThruUrl,
+              dataType: "json",
+              method: 'GET',
+              data: {"apiEndpoint": apiEndpoint,
+                      "key" : "PNMHWd68wyyadCQGiHVS3nEjh",
+                      "rt" : "49" + "," + "X49" + "," + "152",
+                      "stpid" : "8417" + "," + "8195" + "," + "12527" + "," + "12569",
+                      "format":"json"}
+            }).done (function (data) {
+              console.log(data);
+              $("#49").append("<h1>Western Stops</h1>");
+              $("#X49").append("<h1>Western Express Stops</h1>");
+              $("#152").append("<h1>Addison Stops</h1>");
+             
+              $.each(data["bustime-response"]["prd"], function(i,v) {
+                  $("#" + v.rt).append("<br>" 
+                                  + "<br>" 
+                                  + "Route #" 
+                                  + v.rt 
+                                  + "<br>" 
+                                  + "Stop: " 
+                                  + v.stpid 
+                                  + "<br>" 
+                                  + "Destination: "
+                                  + v.des
+                                  +"<br>"
+                                  + "Arrival Time: " 
+                                  + v.prdtm 
+                                  + "<br>" 
+                                  + "ETA: " 
+                                  + v.prdctdn 
+                                  + " minutes"
+                                  + "<br>"
+                                  + "Direction: "
+                                  + v.rtdir
+                                  + "<hr>"
+                                  
+                                  
+                                  );
+                  
+                
+              });
+            });
+
+            });
+        });
+            
+  
+</script>
+ 
+</body>
+</html>
