@@ -4,6 +4,49 @@
   <meta charset="utf-8">
   <title>jQuery.parseXML demo</title>
   <style>
+  button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+    h1 {
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+    }
      div {
         padding: 20px;
         margin: auto;
@@ -11,22 +54,33 @@
         width: 80%;
     }
     .textColor {
-        color: #FE886E;
-        background-color: #D6EAF8;
+        color: #FC6D6D;
+        background-color: #D4FFCC;
     }
     .borderColor {
         border-width: 3px;
         border-style: solid;
-        border-color: #9E66F5;
+        border-color: #3498DB;
+    }
+    hr {
+      height: 1px;
+      background-color: #3498DB;
+    }
+    body  {
+    background-image: url("https://c1.staticflickr.com/5/4099/4879130272_f0af4f108d_b.jpg");
+    background-size: 1300px 800px;
+    background-repeat: repeat;
+        
     }
   </style>
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-  <h1>Find a Bus at Addison and Western</h1>
+  <h1><font color="white">Find Buses Near Lane Tech!</font></h1>
   <div class="textColor borderColor">
   
-  <button type="button" id="btnFind" >Find a Bus!</button>
+  <button type="button" id="btnFind" style="vertical-align:middle"><span>Find a Bus! </span></button>
 
 </div>
     
