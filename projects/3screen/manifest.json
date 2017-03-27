@@ -1,0 +1,15 @@
+{
+  "short_name": "Home of the Chicago Bulls",
+  "name": "Home of the Chicago Bulls",
+  "icons": [
+    {
+      "src":"images/bulls.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html?utm_source=homescreen",
+  "background_color": "Red",
+  "Theme_color": "",
+  "display": "standalone"
+}

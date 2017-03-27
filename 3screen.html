@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+    .screen {display:none}
+    
+    .textColor {
+        background-color: Red;
+    }
+    
+     body  {
+    background-image: url("https://i.ytimg.com/vi/qneu5COTFW4/maxresdefault.jpg");
+    background-size: 750px 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+  </style>
+  </head>
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header textColor">
+        <div class="mdl-layout__header-row textColor">
+          <!-- Title -->
+          <span class="mdl-layout-title">Home of the Chicago Bulls</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+          <a id="link1" class="mdl-navigation__link" href="#">Home Screen</a>
+          <a id="link2" class="mdl-navigation__link" href="#">Score</a>
+          <a id="link3" class="mdl-navigation__link" href="#">Linups</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div id="homescreen" class="screen page-content">
+          <h1>Home Screen</h1>
+          <p style="font-size:25px">Upcoming Bulls Games:</p>
+             <main class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width">
+                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src=" images/library.png" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Project 1: Library Tracker</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        This app allows you to find a library near you or a specific one that you want to go to by either typing in the name or zip code of the library. It then will give you info about that library.
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="https://preview.c9users.io/mnelson21/webdevs2/projects/1/index.html">View Live Project</a>
+                        <a href="https://github.com/mnelson21/webdevs2/tree/master/projects/1">
+                          <img src=" images/github.png" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+                        </a>
+                    </div>
+                </div>
+        </div>
+        <div id="score" class="screen page-content"><h1>Score</h1></div>
+        <div id="linups" class="screen page-content"><h1>Linups</h1></div>
+      </main>
+    </div>
+    <!-- Accent-colored raised button with ripple -->
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Button
+</button>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+        
+        $("#homescreen").show();
+        
+        $("#link1").on("click", function() {
+          $(".screen").hide();
+          $("#homescreen").show();
+        });
+        
+        $("#link2").on("click", function() {
+          $(".screen").hide();
+          $("#score").show();
+        });
+        
+        $("#link3").on("click", function() {
+          $(".screen").hide();
+          $("#linups").show();
+        });
+      
+        
+      })
+    </script>
+  </body>
+</html>

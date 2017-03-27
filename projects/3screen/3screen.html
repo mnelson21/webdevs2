@@ -1,0 +1,272 @@
+<html>
+  <head>
+    
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+    .screen {display:none}
+    
+    .textColor {
+        background-color: Red;
+    }
+    
+     body  {
+    background-image: url("https://i.ytimg.com/vi/qneu5COTFW4/maxresdefault.jpg");
+    background-size: 750px 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+    .article-image {
+      width: 200%;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Home of the Chicago Bulls">
+  <link rel="apple-touch-icon" href="images/bulls.png">
+  </head>
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header textColor">
+        <div class="mdl-layout__header-row textColor">
+          <!-- Title -->
+          <span class="mdl-layout-title">Home of the Chicago Bulls</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Pages</span>
+        <nav class="mdl-navigation">
+          <a id="link1" class="mdl-navigation__link" href="#">Home Screen</a>
+          <a id="link2" class="mdl-navigation__link" href="#">Conference Standings</a>
+          <a id="link3" class="mdl-navigation__link" href="#">Linups</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div id="homescreen" class="screen page-content">
+          <h1>Schedule</h1>
+          <p style="font-size:25px">Upcoming Bulls Games:</p>
+             <main class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width">
+                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src=" images/raptors.png" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">@ Raptors <br>6:00pm</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="http://www.nba.com/bulls/schedule/">View on NBA.com</a>
+                    </div>
+                </div>
+                
+                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src=" images/pistons.png" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">@ Home <br>7:00pm</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="http://www.nba.com/bulls/schedule/">View on NBA.com</a>
+                    </div>
+                </div>
+                
+                <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src=" images/76ers.png" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">@ Home <br>7:00pm</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="http://www.nba.com/bulls/schedule/">View on NBA.com</a>
+                    </div>
+                </div>
+                
+        </div>
+            <!-- Accent-colored raised button with ripple -->
+<a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="http://www.nba.com/bulls/schedule/">
+  View full Schedule
+</a>
+        </div>
+        <div id="score" class="screen page-content"><h1>Conference Standings</h1>
+
+          <div id="dual_x_div" style="width: 900px; height: 900px;"></div>
+          
+          <a onclick="myFunction()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Bulls News
+          </a>
+
+        </div>
+        <div id="linups" class="screen page-content">
+          <h1>Linups</h1>
+          <p>(Click on players to see full stats)</p>
+          <p style="font-size:25px"><b><u>Starters</u></b></p>
+        <a href="http://www.espn.com/nba/player/_/id/6430/jimmy-butler">
+          <img src= "images/butler.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/3447/robin-lopez">
+          <img src= "images/lopez.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/3064482/bobby-portis">
+          <img src= "images/Portis.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/3026/rajon-rondo">
+          <img src= "images/rondo.png" height="200" width="1000">
+        </a> 
+        <a href="http://www.espn.com/nba/player/_/id/3893023/paul-zipser">
+          <img src= "images/zipser.png" height="200" width="1000">
+        </a> 
+          <p style="font-size:25px"><b><u>Bench</u></b></p>
+        <a href="http://www.espn.com/nba/player/_/id/2596108/michael-carter-williams">
+          <img src= "images/williams.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/2999549/denzel-valentine">  
+          <img src= "images/valentine.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/6459/nikola-mirotic">
+          <img src= "images/mirotic.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/2531047/jerian-grant">
+          <img src= "images/grant.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/3064230/cameron-payne">
+          <img src= "images/payne.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/3113587/cristiano-felicio">
+          <img src= "images/felicio.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/2959753/joffrey-lauvergne">
+          <img src= "images/lauvergne.png" height="200" width="1000">
+        </a>
+        <a href="http://www.espn.com/nba/player/_/id/2490589/isaiah-canaan">
+          <img src= "images/canaan.png" height="200" width="1000">
+        </a>
+          <!-- http://www.espn.com/nba/team/roster/_/name/chi/chicago-bulls link for lineups -->
+        </div>
+      </main>
+    </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+        
+        $("#homescreen").show();
+        
+        $("#link1").on("click", function() {
+          $(".screen").hide();
+          $("#homescreen").show();
+        });
+        
+        $("#link2").on("click", function() {
+          $(".screen").hide();
+          $("#score").show();
+        });
+        
+        $("#link3").on("click", function() {
+          $(".screen").hide();
+          $("#linups").show();
+        });
+      
+      $('.mdl-navigation__link').click(function(){
+            
+//  the drawer
+            $('.mdl-layout__drawer').toggleClass('is-visible');
+
+// the transparent overlay that shows when you open the drawer
+$('.mdl-layout__obfuscator').toggleClass('is-visible');   
+            
+ });
+
+        
+      });
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['Teams', 'Wins', 'Losses'],
+          ['Cleveland Cavaliers', 47, 24],
+          ['Boston Celtics', 47, 26],
+          ['Washington Wizards', 44, 28],
+          ['Toronto Raptors', 43, 29],
+          ['Atlanta Hawks', 37, 35],
+          ['Milwaukee Bucks', 37, 35],
+          ['Indiana Pacers', 36, 36],
+          ['Miami Heat', 35, 37],
+          ['Chicago Bulls', 34, 39],
+          ['Detroit Pistons', 34, 39],
+          ['Charlotte Hornets', 32, 40],
+          ['Philadalphia 76ers', 27, 45],
+          ['New York Knicks', 27, 45],
+          ['Orlando Magic', 27, 46],
+          ['Brooklyn Nets', 15, 57],
+        ]);
+
+        var options = {
+          width: 1100,
+          height: 1000,
+          chart: {
+            title: 'Nearby galaxies',
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          series: {
+            0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            x: {
+              distance: {label: 'parsecs'}, // Bottom x-axis.
+              brightness: {side: 'top'} // Top x-axis.
+            }
+          }
+        };
+
+      var chart = new google.charts.Bar(document.getElementById('dual_x_div'));
+      chart.draw(data, options);
+    };
+    </script>
+    
+    <script>
+    function myFunction() {
+    alert("The Bulls are only 1 1/2 games behind the Miami Heat in the 8th seed for the playoffs with only 9 more games in the season");
+}
+</script>
+    
+    <script>
+  if ('serviceWorker' in navigator) {
+    console.log("Will the service worker register?");
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(reg){
+        console.log("Yes, it did.");
+      }).catch(function(err) {
+        console.log("No it didn't. This happened: ", err);
+      });
+  }
+</script>
+    
+  </body>
+  
+</html>
