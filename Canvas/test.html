@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    
+    <style></style>
+    
+  </head>
+  <body>
+    <!-- 
+      need a canvas element here
+    
+    -->
+    <canvas id="canvas" width="1100" height="600"></canvas>
+    
+    
+    <script>
+      var canvas = document.getElementById("canvas");
+      var livesRemaining = 3;
+      var score = 0;
+      var level = 1;
+      var paused = false;
+      var player = {x: 0, y: 0, costume: "http://www.softwarecrew.com/wp-content/uploads/2012/05/logo200-17525.png", speed: 1};
+      var harm = {x: 900, y: 200, costume: "http://www.clker.com/cliparts/4/6/F/h/u/L/rocket-ship-shooting-md.png", speed: 1};
+      var benefit = {x: 900, y: 400, costume: "http://images.clipartpanda.com/people-running-scared-clipart-KinyXpriq.gif"};
+      var angleInDegrees=0;
+      
+       var context = canvas.getContext("2d");
+
+        var background = new Image();
+        background.src = "http://img11.deviantart.net/40e5/i/2011/267/6/1/dream_of_saturn_by_qaz2008-d4ao288.jpg";
+      /*
+      
+        main animation loop
+      
+      */
+      player.image = new Image();
+        player.image.src = player.costume;
+      
+      harm.image = new Image();
+        harm.image.src = harm.costume;
+      
+      benefit.image = new Image();
+        benefit.image.src = benefit.costume;
+      
+      function animate() {
+        context.clearRect(0,0,canvas.width,canvas.height);
+        
+        // update harm and benefit y coordinates
+         if (harm.x <= 0) {
+          harm.x = canvas.width;
+        }
+        
+         if(benefit.x <= 0) {
+           benefit.x = canvas.width;
+         }
+        // draw background
+        context.drawImage(background, 0, 0, 1100, 600);
+        
+        //  draw player
+        context.drawImage(player.image, player.x, player.y, 100, 100);
+        
+        // draw harm 
+        context.drawImage(harm.image, harm.x, harm.y, 100, 100);
+        harm.x -=5;
+        
+        // check for and handle edge condition
+        
+        // check for and handle harm collision
+      
+        // draw benefit
+        context.drawImage(benefit.image, benefit.x, benefit.y, 100, 100);
+        benefit.x -=5;
+        
+        // check for and handle edge condition
+        
+        // check for benefit collision
+        
+        // draw text (lives and score)
+        
+        
+        
+        //  if the game has not been paused, 
+        if (!paused) {
+          requestAnimationFrame(animate);
+        }
+        
+      }
+      
+      animate();
+      
+      document.addEventListener("keydown", onKeyPress);
+      
+      function onKeyPress (e) {
+          
+          
+          if (e.keyCode == 38) {
+                    player.y = player.y - 5;
+                }
+          if (e.keyCode == 40) {
+                    player.y = player.y + 5;
+                }
+        
+      }
+      
+      //  event handler for moving player
+      //    use onKeyPress event, and change the player.y value based on the up/down keys
+      
+      
+      
+      
+      
+    </script>
+    
+    
+  </body>
+</html>
